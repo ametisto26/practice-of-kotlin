@@ -1,1 +1,1 @@
-# practice-of-kotlin
+# Practice of Kotlin Programming
