@@ -43,10 +43,11 @@ println("1+1 = ${1+1}.")
 
 var nonNull: String = "AF"
 var okNull: String? = "AA" // Nullable
+
+// nonNull = okNull  Nullable 型を非Null型に代入できない。
+
 // nonNull = null エラーになる。
 okNull = null
-
-nonNull = okNull // Nullable 型を 非Null型に代入できない。
 
 var a0: String = "A"
 var a1: String? = "A"
