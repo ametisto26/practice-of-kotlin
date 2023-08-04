@@ -63,3 +63,85 @@ when (obj) {
        is String -> println("${obj.length}")
        else -> println("Type is not String")
 }
+
+val ar = arrayOf(2, 3, 6)
+for (elem in ar) {
+       println(elem)
+}
+
+val ma = mapOf("First" to 1, "Second" to 2, "Third" to 3)
+for ((key, value) in ma) {
+       println("${key}:${value}")
+}
+
+val lst = listOf("a", "i", "u")
+for ((i, v) in lst.withIndex()) {
+       println("${i}:${v}")
+}
+
+for (i in 1..5) {
+       println(i)
+}
+
+for (i in 1 until 5) {
+       println(i)
+}
+
+
+for (i in 5 downTo 1) {
+       println(i)
+}
+
+for (i in 1..50 step 6) {
+       println(i)
+}
+
+
+for (i in 1..50) {
+       if (i % 2 == 0) continue
+       println(i)
+       if (i == 47) break
+}
+
+
+for (i in 1..5) {
+       for (j in 1..5) {
+              if (i * j > 7) break
+              print("${i * j}")
+       }
+       println()
+}
+
+
+outer@ for (i in 1..5) {
+       for (j in 1..5) {
+              if (i * j > 7) break@outer
+              print("${i * j}")
+       }
+       println()
+}
+
+
+var i = 1
+while (i < 4) {
+       println(i)
+       i ++
+}
+
+var j = 1
+do {
+       println(j)
+       j ++
+} while (j < 4) // 出力は 1 2 3 
+
+
+var j = 4
+do {
+       println(j)
+       j ++
+} while (j < 4) // 出力は 4
+
+
+/* 例
+do {input password} while (check password)
+ */
