@@ -75,3 +75,17 @@ fun main(args: Array<String>) {
 
 val (sum, _) = getSumAverage(2, 5, 7, 3) // _ 第2成分は使用しない
 
+
+// 高階関数
+fun printOne(n: Int): Unit {
+       println(n)
+}
+
+val ar = arrayOf(0, 1, 1, 2, 3, 5, 8)
+ar.forEach(::printOne)
+
+ar.forEach({n: Int -> println(n)})
+ar.forEach({n: -> println(n)}) //型推論
+ar.forEach() {n: -> println(n)} //高階関数の最後の引数がラムダ式なら () の外にラムダ式を書ける。
+ar.forEach {n: -> println(n)} //高階関数の引数が唯一かつラムダ式なら () を省略できる。
+ar.forEach {println(it)} // ラムダ式の引数が唯一なら，その引数を暗黙的な引数itで受け取れる。
