@@ -89,3 +89,52 @@ ar.forEach({n: -> println(n)}) //型推論
 ar.forEach() {n: -> println(n)} //高階関数の最後の引数がラムダ式なら () の外にラムダ式を書ける。
 ar.forEach {n: -> println(n)} //高階関数の引数が唯一かつラムダ式なら () を省略できる。
 ar.forEach {println(it)} // ラムダ式の引数が唯一なら，その引数を暗黙的な引数itで受け取れる。
+
+
+// return に関する注意
+fun main(arg: Array<String>) {
+       val arr = arrayOf(1, 2, 3, 4)
+       arr.forEach {
+              if(it == 3) return
+              println(it)
+       }
+       println("Finish!")
+}
+
+fun main(arg: Array<String>) {
+       val arr = arrayOf(1, 2, 3, 4)
+       arr.forEach loop@ {
+              if(it == 3) return@loop
+              println(it)
+       }
+       println("Finish!")
+}
+
+
+fun main(arg: Array<String>) {
+       val arr = arrayOf(1, 2, 3, 4)
+       arr.forEach {
+              if(it == 3) return@forEach
+              println(it)
+       }
+       println("Finish!")
+}
+
+
+// 処理時間を計測する関数
+fun benchmark(unitStr: String, func: () -> Unit): String { //unitStrは単位の文字列
+       val start = System.currentTimeMillis()
+       func()
+       val end = System.currentTimeMillis()
+       return (end - start).toString() + unitStr
+}
+
+val time = benchmark("ミリ秒") {
+       var x = 0
+       for (i in 1..1_000_000_000) {
+              x++
+       }
+}
+
+println("処理時間" + time)
+
