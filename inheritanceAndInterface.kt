@@ -101,3 +101,16 @@ interface MyInterface {
 class Price: MyInterface {
        override var price = 200
 }
+
+
+//継承・実装間の型変換
+open class Person {}
+class BusinessPerson: Person() {
+       fun work() = println("Working.")
+}
+
+val p: Person = BusinessPerson() //upcasting 派生クラス＝＞基底クラス
+if (p is BusinessPerson) { //downcasting　派生クラス＜＝基底クラス
+       p.work()  //ここではもうBusinessPerson型として扱われる（スマートキャスト）。
+}
+
