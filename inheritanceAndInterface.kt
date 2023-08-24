@@ -79,8 +79,8 @@ class Foo: FooInterface {
        override var foo = "FOO"
 }
 
-val a = Foo()
-a.foo() // FOO と出力される
+val aaa = Foo()
+aaa.foo() // FOO と出力される
 
 
 //バッキングフィールドを持てないことへの対処
