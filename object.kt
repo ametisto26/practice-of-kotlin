@@ -32,9 +32,9 @@ object TanakaTaro {
 
 TanakaTaro.clothe = " "
 TanakaTaro.intro()
-
-
 // 既存のクラスの継承も可能である。基底クラスのコンストラクタに値を渡せば良い。
 // object AAA: Foo("Foo") {}
+
+
 
 
