@@ -37,4 +37,21 @@ TanakaTaro.intro()
 
 
 
+// コンパニオンオブジェクト
+class MyClass {
+       companion object Factory { //クラス内部のオブジェクト宣言のようなもの
+              fun create(): MyClass = MyClass()
+       }
+}
+
+val myc = MyClass.create()
+println(myc::class) // class MyClass
+
+// コンパニオンオブジェクト
+// class MyClass {
+//        companion object { // 登場しないので省略可能
+//               fun create(): MyClass = MyClass()
+//        }
+// }
+
 
