@@ -54,4 +54,7 @@ println(myc::class) // class MyClass
 //        }
 // }
 
+// コンパイル時定数
+const val date = 1
+
 
